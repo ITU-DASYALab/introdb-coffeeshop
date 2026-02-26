@@ -29,19 +29,17 @@ public class App {
      * @param args Command-line arguments (not used)
      */
     public static void main(String[] args) {
-        Javalin app = Javalin.create(config -> {
+        Javalin.create(config -> {
             config.staticFiles.add("/");
+            config.routes.get("/", ctx -> ctx.redirect("/index.html"));
+            config.routes.post("/login", App::handleLogin);
+            config.routes.get("/logout", App::handleLogout);
+            config.routes.get("/products", App::renderProductsPage);
+            config.routes.post("/purchase", App::handlePurchase);
+            config.routes.get("/purchases", App::renderPurchasesPage);
+            config.routes.get("/my-purchases", App::renderMyPurchasesPage);
+            config.routes.post("/register", App::handleRegister);
         }).start(8080);
-
-        app.get("/", ctx -> ctx.redirect("/index.html"));
-
-        app.post("/login", App::handleLogin);
-        app.get("/logout", App::handleLogout);
-        app.get("/products", App::renderProductsPage);
-        app.post("/purchase", App::handlePurchase);
-        app.get("/purchases", App::renderPurchasesPage);
-        app.get("/my-purchases", App::renderMyPurchasesPage);
-        app.post("/register", App::handleRegister);
     }
 
     // --- SQL Query Methods ---

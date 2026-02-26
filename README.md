@@ -1,18 +1,17 @@
 # How to Build and Start the Project
 
-To build and start the Coffee Shop web app, you need to have the following software 
-installed: 
-- Java 17
+To build and start the Coffee Shop web app, you need to have the following software installed: 
+- Java 17 (or higher)
 - Maven
 - Git
 
-We give installation instructions for Linux and the Windows for Linux Subsystem. 
+We give installation instructions for Linux/Mac and the Windows for Linux Subsystem. Please ask your teaching assistant if you are using PowerShell or Command Prompt on Windows.
 
 ## Step 1: Clone the repository
 
 ```bash
-git clone git@github.com:ITU-DASYALab/introdb2025coffeeshop.git
-cd introdb2025coffeeshop
+git clone git@github.com:ITU-DASYALab/introdb-coffeeshop.git
+cd introdb-coffeeshop
 ```
 
 ## Step 2: Create the database file
